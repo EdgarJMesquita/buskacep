@@ -24,13 +24,19 @@ public class HTTPService extends AsyncTask<Void,Void,CEP> {
         StringBuilder resposta = new StringBuilder();
 
         try {
+            // intanciando a classe URL com a url da BrasilAPI.
             URL url = new URL("https://brasilapi.com.br/api/cep/v1/"+this.cep);
+
+            // Inicializa a classe HttpURLConnection com as configurações da requisição
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept","application/json");
             connection.setConnectTimeout(5000);
+
+            // Aqui a requisição é feita
             connection.connect();
 
+            // Inicializa a classe Scanner para escanear o JSON
             Scanner scanner = new Scanner(url.openStream());
 
             while(scanner.hasNext()){
@@ -42,6 +48,7 @@ public class HTTPService extends AsyncTask<Void,Void,CEP> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // objeto Gson do Google para converter JSON para uma string.
         return new Gson().fromJson((resposta.toString()),CEP.class);
     }
 }

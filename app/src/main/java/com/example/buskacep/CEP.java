@@ -7,6 +7,7 @@ public class CEP {
     public String neighborhood;
     public String street;
 
+    /*
     public String getCep() {
         return cep;
     }
@@ -56,4 +57,5 @@ public class CEP {
                 + "\nCidade:" + getCity()
                 + "\nEstado:" + getState();
     }
+    */
 }

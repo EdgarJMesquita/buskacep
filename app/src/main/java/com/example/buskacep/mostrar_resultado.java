@@ -28,6 +28,7 @@ public class mostrar_resultado extends AppCompatActivity {
 
         Bundle dados = getIntent().getExtras();
 
+        // Busca as strings passados pelo objeto Intent
         scep.setText(dados.getString("cep"));
         srua.setText(dados.getString("rua"));
         sbairro.setText(dados.getString("bairro"));
