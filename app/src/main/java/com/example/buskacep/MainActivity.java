@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         if(ipt.length()==8){
 
             // instanciando a classe HTTPService e passando input do usuário
-            HTTPService service = new HTTPService(ipt.getText().toString());
+            String cep = ipt.getText().toString();
+            HTTPService service = new HTTPService(cep);
 
             try {
 
